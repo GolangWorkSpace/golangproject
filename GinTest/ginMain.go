@@ -28,6 +28,7 @@ func main() {
 	router.POST("/form_post", post1handler)
 	router.POST("/posthandle",PostHandler)
 	router.POST("/upload",uploadHandler)
+	//router.POST("post",post001handler)
 	router.Run(":8081")
 
 
@@ -39,10 +40,9 @@ func Middleware(c *gin.Context) {
 	if c.Request.Form == nil {
 		c.Request.ParseMultipartForm(32 << 20)
 	}
-	fmt.Println("param:,",c.Request.Form, "URL: ",c.Request.URL,"Params:",c.Param)
+	fmt.Println("param=",c.Request.Form, "path=",c.Request.URL)
 
 
-	log.Fatal("Come with fatal,exit with 1 \n")
 
 }
 
