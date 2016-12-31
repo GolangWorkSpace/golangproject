@@ -1,0 +1,9 @@
+2017-01-01 04:52:58 	 [ INFO] 	 <main.go:34>  	 map[],localhost:8081/get,&{GET /get HTTP/1.1 %!s(int=1) %!s(int=1) map[Connection:[keep-alive] Cache-Control:[no-cache] User-Agent:[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36] Postman-Token:[fdac47b4-5a25-4388-601e-7f6969fefee7] Accept:[*/*] Accept-Encoding:[gzip, deflate, sdch, br] Accept-Language:[zh-CN,zh;q=0.8,en;q=0.6]] %!s(*struct { http.eofReaderWithWriteTo; io.Closer }=&{{} {<nil>}}) %!s(int64=0) [] %!s(bool=false) localhost:8081 map[] map[] %!s(*multipart.Form=<nil>) map[] [::1]:60430 /get %!s(*tls.ConnectionState=<nil>) %!s(<-chan struct {}=<nil>) %!s(*http.Response=<nil>) %!s(*context.cancelCtx=&{0xc4201644c0 0xc420077140 {0 0} map[] <nil>})}
+2017-01-01 04:53:27 	 [ INFO] 	 <main.go:34>  	 map[],localhost:8081/get
+2017-01-01 04:53:37 	 [ INFO] 	 <main.go:34>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-01 04:55:04 	 [ INFO] 	 <main.go:34>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-01 04:55:04 	 [ INFO] 	 <main.go:34>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-01 04:56:11 	 [ INFO] 	 <main.go:34>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-01 04:56:11 	 [ INFO] 	 <mapis.go:20>  	 the key is not exist!
+2017-01-01 04:56:12 	 [ INFO] 	 <main.go:34>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-01 04:56:12 	 [ INFO] 	 <mapis.go:20>  	 the key is not exist!
