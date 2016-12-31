@@ -7,7 +7,7 @@ import (
 	"os"
 	"io"
 	"log"
-	"Project/GinTest/handler"
+
 )
 
 func main() {
@@ -19,16 +19,17 @@ func main() {
 	//glog.Info("hello, glog")
 	//glog.Warning("warning glog")
 	//glog.Error("error glog")
-
 	gin.SetMode(gin.DebugMode)
 
 	router := gin.Default()
 	router.Use(Middleware)
+	//router.Use(middle001ware)
 
 	router.POST("/form_post", post1handler)
 	router.POST("/posthandle",PostHandler)
 	router.POST("/upload",uploadHandler)
-	router.POST("post",post001handler)
+	router.GET("/get",GetHandler)
+	//router.POST("post",middle001ware)
 	router.Run(":8081")
 
 

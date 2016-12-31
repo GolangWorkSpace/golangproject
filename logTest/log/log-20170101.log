@@ -1,0 +1,5 @@
+2017-01-01 03:33:47 	 [DEBUG] 	 <log4gotest.go:35>  	 log4go by skoo
+2017-01-01 03:33:47 	 [ INFO] 	 <log4gotest.go:36>  	 log4go by skoo
+2017-01-01 03:33:47 	 [ WARN] 	 <log4gotest.go:37>  	 log4go by skoo
+2017-01-01 03:33:47 	 [ERROR] 	 <log4gotest.go:38>  	 log4go by skoo
+2017-01-01 03:33:47 	 [FATAL] 	 <log4gotest.go:41>  	 log4go by skoo
