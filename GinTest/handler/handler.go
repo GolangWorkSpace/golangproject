@@ -1,8 +1,8 @@
-package  GinTest
+package handler
 
 import (
-	"net/http"
 	"gopkg.in/gin-gonic/gin.v1"
+	"net/http"
 )
 
 func post001handler(c *gin.Context)  {

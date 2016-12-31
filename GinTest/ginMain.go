@@ -7,7 +7,7 @@ import (
 	"os"
 	"io"
 	"log"
-
+	"Project/GinTest/handler"
 )
 
 func main() {
@@ -28,8 +28,9 @@ func main() {
 	router.POST("/form_post", post1handler)
 	router.POST("/posthandle",PostHandler)
 	router.POST("/upload",uploadHandler)
-	//router.POST("post",post001handler)
+	router.POST("post",post001handler)
 	router.Run(":8081")
+
 
 
 
