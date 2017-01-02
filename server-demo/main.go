@@ -5,10 +5,11 @@ import (
 	log "github.com/brasbug/log4go"
 	"Project/server-demo/handlers"
 	"Project/server-demo/ginpprof"
-
-
-
+	"Project/server-demo/db"
+	"Project/server-demo/midware"
 )
+
+
 
 func SetLog() {
 	w := log.NewFileWriter()
@@ -25,17 +26,17 @@ func main() {
 
 	SetLog()
 	defer log.Close()
+
+	//链接mgo
+	db.Connect()
+
 	gin.SetMode(gin.DebugMode)
 	router := gin.Default()
-	router.Use(Middleware)
+	router.Use(midware.Connect)
+	router.Use(midware.ErrorHandler)
+	router.Use(midware.Middleware)
 	router.GET("/get", handlers.GetHandler)
+	router.POST("/articls",handlers.Create)
 	ginpprof.Wrapper(router)
 	router.Run(":8081")
-}
-
-func Middleware(c *gin.Context) {
-	if c.Request.Form == nil {
-		c.Request.ParseMultipartForm(32 << 20)
-	}
-	log.Info("%s,%s%s",c.Request.Form,c.Request.Host,c.Request.RequestURI)
 }

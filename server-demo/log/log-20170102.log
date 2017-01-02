@@ -1,0 +1,25 @@
+2017-01-02 23:04:56 	 [ INFO] 	 <midware.go:13>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-02 23:04:56 	 [ INFO] 	 <mapis.go:16>  	 the key is not exist!
+2017-01-02 23:05:16 	 [ INFO] 	 <midware.go:13>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-02 23:05:16 	 [ INFO] 	 <mapis.go:16>  	 the key is not exist!
+2017-01-02 23:05:30 	 [ INFO] 	 <midware.go:13>  	 map[],localhost:8081/debug/pprof/
+2017-01-02 23:05:30 	 [ INFO] 	 <midware.go:13>  	 map[],localhost:8081/favicon.ico
+2017-01-02 23:11:35 	 [ INFO] 	 <midware.go:13>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-02 23:11:35 	 [ INFO] 	 <mapis.go:16>  	 the key is not exist!
+2017-01-02 23:11:35 	 [ INFO] 	 <midware.go:13>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-02 23:11:35 	 [ INFO] 	 <mapis.go:16>  	 the key is not exist!
+2017-01-02 23:12:17 	 [ INFO] 	 <midware.go:13>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-02 23:12:17 	 [ INFO] 	 <mapis.go:16>  	 the key is not exist!
+2017-01-02 23:12:18 	 [ INFO] 	 <midware.go:13>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-02 23:12:18 	 [ INFO] 	 <mapis.go:16>  	 the key is not exist!
+2017-01-02 23:12:18 	 [ INFO] 	 <midware.go:13>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-02 23:12:18 	 [ INFO] 	 <mapis.go:16>  	 the key is not exist!
+2017-01-02 23:12:18 	 [ INFO] 	 <midware.go:13>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-02 23:12:18 	 [ INFO] 	 <mapis.go:16>  	 the key is not exist!
+2017-01-02 23:12:18 	 [ INFO] 	 <midware.go:13>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-02 23:12:18 	 [ INFO] 	 <mapis.go:16>  	 the key is not exist!
+2017-01-02 23:12:18 	 [ INFO] 	 <midware.go:13>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-02 23:12:18 	 [ INFO] 	 <mapis.go:16>  	 the key is not exist!
+2017-01-02 23:12:30 	 [ INFO] 	 <midware.go:13>  	 map[key:[abc]],localhost:8081/get?key=abc
+2017-01-02 23:12:30 	 [ INFO] 	 <mapis.go:16>  	 abc
+2017-01-02 23:55:39 	 [ INFO] 	 <midware.go:13>  	 map[title:[title] body:[body]],localhost:8081/articls

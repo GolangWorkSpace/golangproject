@@ -1,4 +1,4 @@
-package middleware
+package midware
 
 import (
 	"regexp"
@@ -35,3 +35,7 @@ func Auth() gin.HandlerFunc {
 		c.Next()
 	}
 }
+
+//func ()  {
+//
+//}
