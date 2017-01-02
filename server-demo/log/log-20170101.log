@@ -7,3 +7,23 @@
 2017-01-01 04:56:11 	 [ INFO] 	 <mapis.go:20>  	 the key is not exist!
 2017-01-01 04:56:12 	 [ INFO] 	 <main.go:34>  	 map[a:[1]],localhost:8081/get?a=1
 2017-01-01 04:56:12 	 [ INFO] 	 <mapis.go:20>  	 the key is not exist!
+2017-01-01 12:23:08 	 [ INFO] 	 <main.go:34>  	 map[a:[1]],localhost:8081/get?a=1
+2017-01-01 12:23:08 	 [ INFO] 	 <mapis.go:20>  	 the key is not exist!
+2017-01-01 15:38:23 	 [ INFO] 	 <main.go:37>  	 map[],127.0.0.1:8081/debug/pprof/
+2017-01-01 15:38:24 	 [ INFO] 	 <main.go:37>  	 map[],127.0.0.1:8081/favicon.ico
+2017-01-01 15:38:26 	 [ INFO] 	 <main.go:37>  	 map[debug:[1]],127.0.0.1:8081/debug/pprof/goroutine?debug=1
+2017-01-01 15:38:30 	 [ INFO] 	 <main.go:37>  	 map[debug:[1]],127.0.0.1:8081/debug/pprof/threadcreate?debug=1
+2017-01-01 15:38:32 	 [ INFO] 	 <main.go:37>  	 map[],127.0.0.1:8081/debug/pprof/
+2017-01-01 15:38:33 	 [ INFO] 	 <main.go:37>  	 map[debug:[2]],127.0.0.1:8081/debug/pprof/goroutine?debug=2
+2017-01-01 15:38:35 	 [ INFO] 	 <main.go:37>  	 map[debug:[2]],127.0.0.1:8081/debug/pprof/goroutine?debug=2
+2017-01-01 15:38:39 	 [ INFO] 	 <main.go:37>  	 map[],127.0.0.1:8081/debug/pprof/
+2017-01-01 15:38:39 	 [ INFO] 	 <main.go:37>  	 map[],127.0.0.1:8081/debug/pprof/
+2017-01-01 15:38:40 	 [ INFO] 	 <main.go:37>  	 map[],127.0.0.1:8081/debug/pprof/
+2017-01-01 15:38:40 	 [ INFO] 	 <main.go:37>  	 map[],127.0.0.1:8081/debug/pprof/
+2017-01-01 15:38:40 	 [ INFO] 	 <main.go:37>  	 map[],127.0.0.1:8081/debug/pprof/
+2017-01-01 15:38:41 	 [ INFO] 	 <main.go:37>  	 map[debug:[1]],127.0.0.1:8081/debug/pprof/goroutine?debug=1
+2017-01-01 15:39:20 	 [ INFO] 	 <main.go:37>  	 map[],127.0.0.1:8081/debug/pprof/symbol
+2017-01-01 15:39:31 	 [ INFO] 	 <main.go:37>  	 map[],127.0.0.1:8081/debug/pprof/profile
+2017-01-01 15:39:33 	 [ INFO] 	 <main.go:37>  	 map[],127.0.0.1:8081/debug/pprof/profile
+2017-01-01 15:39:35 	 [ INFO] 	 <main.go:37>  	 map[],127.0.0.1:8081/debug/pprof/
+2017-01-01 15:39:40 	 [ INFO] 	 <main.go:37>  	 map[debug:[1]],127.0.0.1:8081/debug/pprof/block?debug=1

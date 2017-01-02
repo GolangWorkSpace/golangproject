@@ -4,6 +4,10 @@ import (
 	"gopkg.in/gin-gonic/gin.v1"
 	log "github.com/brasbug/log4go"
 	"Project/server-demo/handlers"
+	"Project/server-demo/ginpprof"
+
+
+
 )
 
 func SetLog() {
@@ -18,12 +22,14 @@ func SetLog() {
 }
 
 func main() {
+
 	SetLog()
 	defer log.Close()
 	gin.SetMode(gin.DebugMode)
 	router := gin.Default()
 	router.Use(Middleware)
 	router.GET("/get", handlers.GetHandler)
+	ginpprof.Wrapper(router)
 	router.Run(":8081")
 }
 
