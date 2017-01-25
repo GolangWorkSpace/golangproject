@@ -32,6 +32,8 @@ func Create(c *gin.Context) {
 		return
 	}
 
+
+
 	err = db.C(models.CollectionArticle).Insert(article)
 	if err != nil {
 		c.Error(err)
