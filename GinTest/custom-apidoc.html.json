@@ -1,0 +1,70 @@
+[
+  {
+    "request_method": "GET",
+    "request_path": "/doc",
+    "request_headers": {
+      "Accept": " text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r",
+      "Accept-Encoding": " gzip, deflate, sdch, br\r",
+      "Accept-Language": " zh-CN,zh;q=0.8,en;q=0.6\r",
+      "Connection": " keep-alive\r",
+      "Cookie": " Webstorm-d7cbad61=43ec27bc-0a14-4322-8f78-9c1ee4594174; _ga=GA1.1.1608973847.1482128655\r",
+      "Upgrade-Insecure-Requests": " 1\r",
+      "User-Agent": " Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36\r"
+    },
+    "request_suppressed_headers": {
+      "Cache-Control": true,
+      "Content-Length": true,
+      "ETag": true,
+      "Set-Cookie": true,
+      "X-Request-Id": true
+    },
+    "request_url_params": {},
+    "request_post_forms": {},
+    "request_body": "",
+    "response_headers": {},
+    "response_suppressed_headers": {
+      "Cache-Control": true,
+      "Content-Length": true,
+      "ETag": true,
+      "X-Request-Id": true,
+      "X-Runtime": true,
+      "X-XSS-Protection": true
+    },
+    "response_status_code": 404,
+    "response_body": ""
+  },
+  {
+    "request_method": "GET",
+    "request_path": "/custom-apidoc.html",
+    "request_headers": {
+      "Accept": " text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r",
+      "Accept-Encoding": " gzip, deflate, sdch, br\r",
+      "Accept-Language": " zh-CN,zh;q=0.8,en;q=0.6\r",
+      "Connection": " keep-alive\r",
+      "Cookie": " Webstorm-d7cbad61=43ec27bc-0a14-4322-8f78-9c1ee4594174; _ga=GA1.1.1608973847.1482128655\r",
+      "Upgrade-Insecure-Requests": " 1\r",
+      "User-Agent": " Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.95 Safari/537.36\r"
+    },
+    "request_suppressed_headers": {
+      "Cache-Control": true,
+      "Content-Length": true,
+      "ETag": true,
+      "Set-Cookie": true,
+      "X-Request-Id": true
+    },
+    "request_url_params": {},
+    "request_post_forms": {},
+    "request_body": "",
+    "response_headers": {},
+    "response_suppressed_headers": {
+      "Cache-Control": true,
+      "Content-Length": true,
+      "ETag": true,
+      "X-Request-Id": true,
+      "X-Runtime": true,
+      "X-XSS-Protection": true
+    },
+    "response_status_code": 404,
+    "response_body": ""
+  }
+]

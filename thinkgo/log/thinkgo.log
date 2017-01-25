@@ -1,0 +1,98 @@
+[2017/01/04T12:56:15.096+08:00] APIdoc's URL path is '/apidoc/' [check direct ip for filter] <myapp_0.1>
+[2017/01/04T12:56:15.096+08:00] [SYS]     GET | /apidoc/*filepath              <myapp_0.1>
+[2017/01/04T12:56:15.096+08:00] [SYS]     GET | /apidoc_swagger.json           <myapp_0.1>
+[2017/01/04T12:56:15.096+08:00] [SYS]     GET | /index/:id                     <myapp_0.1>
+[2017/01/04T12:56:15.096+08:00] [SYS]     GET | /static/*filepath              <myapp_0.1>
+[2017/01/04T12:56:15.096+08:00] [SYS]     GET | /upload/*filepath              <myapp_0.1>
+[2017/01/04T12:56:15.096+08:00] [myapp_0.1] listen and serve HTTP/HTTP2 on 0.0.0.0:8080 <myapp_0.1>
+[2017/01/04T12:56:25.816+08:00] [I]       127.0.0.1     GET  404        228     34.004µs /                              |  <myapp_0.1>
+[2017/01/04T12:56:26.127+08:00] [I]       127.0.0.1     GET  404        228      31.21µs /favicon.ico                   |  <myapp_0.1>
+[2017/01/04T12:56:43.397+08:00] [I]       127.0.0.1     GET  404        228      68.36µs /apidoc.html                   |  <myapp_0.1>
+[2017/01/04T12:56:49.587+08:00] [I]       127.0.0.1     GET  301         43     26.465µs /apidoc                        |  <myapp_0.1>
+[2017/01/04T12:56:49.592+08:00] [I]       127.0.0.1     GET  200       5631    513.567µs /apidoc/                       |  <myapp_0.1>
+[2017/01/04T12:56:49.616+08:00] [I]       127.0.0.1     GET  200        452    120.861µs /apidoc/css/typography.css     |  <myapp_0.1>
+[2017/01/04T12:56:49.616+08:00] [I]       127.0.0.1     GET  200       1066    180.123µs /apidoc/css/reset.css          |  <myapp_0.1>
+[2017/01/04T12:56:49.617+08:00] [I]       127.0.0.1     GET  200      48978   1.124268ms /apidoc/css/screen.css         |  <myapp_0.1>
+[2017/01/04T12:56:49.618+08:00] [I]       127.0.0.1     GET  200        692    171.346µs /apidoc/lib/object-assign-pollyfill.js |  <myapp_0.1>
+[2017/01/04T12:56:49.618+08:00] [I]       127.0.0.1     GET  200        369    116.818µs /apidoc/lib/jquery.slideto.min.js |  <myapp_0.1>
+[2017/01/04T12:56:49.62+08:00] [I]       127.0.0.1     GET  200        762    178.355µs /apidoc/lib/jquery.wiggle.min.js |  <myapp_0.1>
+[2017/01/04T12:56:49.621+08:00] [I]       127.0.0.1     GET  200       4119   1.174355ms /apidoc/lib/jquery.ba-bbq.min.js |  <myapp_0.1>
+[2017/01/04T12:56:49.622+08:00] [I]       127.0.0.1     GET  200      92555     4.4444ms /apidoc/lib/jquery-1.8.0.min.js |  <myapp_0.1>
+[2017/01/04T12:56:49.623+08:00] [I]       127.0.0.1     GET  200      43621    1.65487ms /apidoc/lib/js-yaml.min.js     |  <myapp_0.1>
+[2017/01/04T12:56:49.623+08:00] [I]       127.0.0.1     GET  200      48517    1.92907ms /apidoc/lib/handlebars-2.0.0.js |  <myapp_0.1>
+[2017/01/04T12:56:49.623+08:00] [I]       127.0.0.1     GET  200      20390      914.3µs /apidoc/lib/backbone-min.js    |  <myapp_0.1>
+[2017/01/04T12:56:49.629+08:00] [I]       127.0.0.1     GET  200       1025    129.288µs /apidoc/lib/highlight.9.1.0.pack_extended.js |  <myapp_0.1>
+[2017/01/04T12:56:49.623+08:00] [I]       127.0.0.1     GET  200      52646   2.156721ms /apidoc/lib/lodash.min.js      |  <myapp_0.1>
+[2017/01/04T12:56:49.631+08:00] [I]       127.0.0.1     GET  200      28156    2.82698ms /apidoc/lib/marked.js          |  <myapp_0.1>
+[2017/01/04T12:56:49.631+08:00] [I]       127.0.0.1     GET  200      11037   1.687681ms /apidoc/lib/highlight.9.1.0.pack.js |  <myapp_0.1>
+[2017/01/04T12:56:49.632+08:00] [I]       127.0.0.1     GET  200      11615    533.701µs /apidoc/lib/swagger-oauth.js   |  <myapp_0.1>
+[2017/01/04T12:56:49.632+08:00] [I]       127.0.0.1     GET  200     130042     3.6649ms /apidoc/lib/jsoneditor.min.js  |  <myapp_0.1>
+[2017/01/04T12:56:49.648+08:00] [I]       127.0.0.1     GET  200      46473    757.671µs /apidoc/css/print.css          |  <myapp_0.1>
+[2017/01/04T12:56:49.655+08:00] [I]       127.0.0.1     GET  200        770   3.952264ms /apidoc/images/logo_small.png  |  <myapp_0.1>
+[2017/01/04T12:56:49.786+08:00] [I]       127.0.0.1     GET  200    1823645 163.240432ms /apidoc/swagger-ui.js          |  <myapp_0.1>
+[2017/01/04T12:56:49.997+08:00] [I]       127.0.0.1     GET  200       2693    360.135µs /apidoc_swagger.json           |  <myapp_0.1>
+[2017/01/04T12:56:50.076+08:00] [I]       127.0.0.1     GET  200        645    103.962µs /apidoc/images/favicon-16x16.png |  <myapp_0.1>
+[2017/01/04T12:56:50.184+08:00] [I]       127.0.0.1     GET  200       1654     66.014µs /apidoc/images/favicon-32x32.png |  <myapp_0.1>
+[2017/01/04T12:56:55.78+08:00] [I]       127.0.0.1     GET  200       2693    113.618µs /apidoc_swagger.json           |  <myapp_0.1>
+[2017/01/04T12:56:56.447+08:00] [I]       127.0.0.1     GET  200       2693      86.81µs /apidoc_swagger.json           |  <myapp_0.1>
+[2017/01/04T12:56:59.646+08:00] [I]       127.0.0.1     GET  200       9257    426.166µs /apidoc/images/throbber.gif    |  <myapp_0.1>
+[2017/01/04T12:57:06.276+08:00] [I]       127.0.0.1     GET  400         13     62.469µs /index/0?p=1                   |  <myapp_0.1>
+[2017/01/04T12:57:17.088+08:00] [I]       127.0.0.1     GET  400         10      38.47µs /index/1211?p=1212&title=12    |  <myapp_0.1>
+[2017/01/04T12:57:25.702+08:00] [I]       127.0.0.1     GET  200         54    132.458µs /index/0?p=1212&title=12       |  <myapp_0.1>
+[2017/01/04T12:58:46.348+08:00] [I]       127.0.0.1     GET  404        237     83.734µs /upload/%2FUsers%2FJack%2FPictures%2F%E6%9C%AA%E5%91%BD%E5%90%8D%E5%89%AF%E6%9C%AC.png |  <myapp_0.1>
+[2017/01/04T12:58:53.491+08:00] [I]       127.0.0.1     GET  404        237     82.364µs /upload/%2FUsers%2FJack%2FPictures%2F%E6%9C%AA%E5%91%BD%E5%90%8D%E5%89%AF%E6%9C%AC.png |  <myapp_0.1>
+[2017/01/04T12:59:30.016+08:00] [I]       127.0.0.1     GET  400         13     36.364µs /index/0                       |  <myapp_0.1>
+[2017/01/04T12:59:34.325+08:00] [I]       127.0.0.1     GET  200         89     85.845µs /index/0?p=m&title=l           |  <myapp_0.1>
+[2017/01/05T11:30:51.336+08:00] APIdoc's URL path is '/apidoc/' [check direct ip for filter] <myapp_0.1>
+[2017/01/05T11:30:51.336+08:00] [SYS]     GET | /apidoc/*filepath              <myapp_0.1>
+[2017/01/05T11:30:51.336+08:00] [SYS]     GET | /apidoc_swagger.json           <myapp_0.1>
+[2017/01/05T11:30:51.336+08:00] [SYS]     GET | /index/:id                     <myapp_0.1>
+[2017/01/05T11:30:51.336+08:00] [SYS]     GET | /static/*filepath              <myapp_0.1>
+[2017/01/05T11:30:51.336+08:00] [SYS]     GET | /upload/*filepath              <myapp_0.1>
+[2017/01/05T11:30:51.336+08:00] [myapp_0.1] listen and serve HTTP/HTTP2 on 0.0.0.0:8080 <myapp_0.1>
+[2017/01/05T11:31:04.322+08:00] [I]       127.0.0.1     GET  301         43     44.515µs /apidoc                        |  <myapp_0.1>
+[2017/01/05T11:31:04.327+08:00] [I]       127.0.0.1     GET  200       5631    451.536µs /apidoc/                       |  <myapp_0.1>
+[2017/01/05T11:31:04.335+08:00] [I]       127.0.0.1     GET  200        452    243.797µs /apidoc/css/typography.css     |  <myapp_0.1>
+[2017/01/05T11:31:04.336+08:00] [I]       127.0.0.1     GET  200       1066    198.114µs /apidoc/css/reset.css          |  <myapp_0.1>
+[2017/01/05T11:31:04.338+08:00] [I]       127.0.0.1     GET  200      48978    783.588µs /apidoc/css/screen.css         |  <myapp_0.1>
+[2017/01/05T11:31:04.338+08:00] [I]       127.0.0.1     GET  200        692     96.357µs /apidoc/lib/object-assign-pollyfill.js |  <myapp_0.1>
+[2017/01/05T11:31:04.34+08:00] [I]       127.0.0.1     GET  200      92555    2.38161ms /apidoc/lib/jquery-1.8.0.min.js |  <myapp_0.1>
+[2017/01/05T11:31:04.434+08:00] [I]       127.0.0.1     GET  200        369    794.058µs /apidoc/lib/jquery.slideto.min.js |  <myapp_0.1>
+[2017/01/05T11:31:04.434+08:00] [I]       127.0.0.1     GET  200       4119    988.748µs /apidoc/lib/jquery.ba-bbq.min.js |  <myapp_0.1>
+[2017/01/05T11:31:04.434+08:00] [I]       127.0.0.1     GET  200        762   1.327176ms /apidoc/lib/jquery.wiggle.min.js |  <myapp_0.1>
+[2017/01/05T11:31:04.438+08:00] [I]       127.0.0.1     GET  200      46473   4.817354ms /apidoc/css/print.css          |  <myapp_0.1>
+[2017/01/05T11:31:04.439+08:00] [I]       127.0.0.1     GET  200      48517   5.217742ms /apidoc/lib/handlebars-2.0.0.js |  <myapp_0.1>
+[2017/01/05T11:31:04.439+08:00] [I]       127.0.0.1     GET  200      43621   5.116662ms /apidoc/lib/js-yaml.min.js     |  <myapp_0.1>
+[2017/01/05T11:31:04.443+08:00] [I]       127.0.0.1     GET  200      52646   1.983951ms /apidoc/lib/lodash.min.js      |  <myapp_0.1>
+[2017/01/05T11:31:04.443+08:00] [I]       127.0.0.1     GET  200       1025    122.837µs /apidoc/lib/highlight.9.1.0.pack_extended.js |  <myapp_0.1>
+[2017/01/05T11:31:04.444+08:00] [I]       127.0.0.1     GET  200      11037    589.319µs /apidoc/lib/highlight.9.1.0.pack.js |  <myapp_0.1>
+[2017/01/05T11:31:04.445+08:00] [I]       127.0.0.1     GET  200      20390   1.356872ms /apidoc/lib/backbone-min.js    |  <myapp_0.1>
+[2017/01/05T11:31:04.446+08:00] [I]       127.0.0.1     GET  200      28156    895.367µs /apidoc/lib/marked.js          |  <myapp_0.1>
+[2017/01/05T11:31:04.446+08:00] [I]       127.0.0.1     GET  200      11615     530.58µs /apidoc/lib/swagger-oauth.js   |  <myapp_0.1>
+[2017/01/05T11:31:04.447+08:00] [I]       127.0.0.1     GET  200     130042     3.7208ms /apidoc/lib/jsoneditor.min.js  |  <myapp_0.1>
+[2017/01/05T11:31:04.453+08:00] [I]       127.0.0.1     GET  200        770    145.482µs /apidoc/images/logo_small.png  |  <myapp_0.1>
+[2017/01/05T11:31:04.577+08:00] [I]       127.0.0.1     GET  200    1823645 134.155347ms /apidoc/swagger-ui.js          |  <myapp_0.1>
+[2017/01/05T11:31:04.82+08:00] [I]       127.0.0.1     GET  200       2693    373.645µs /apidoc_swagger.json           |  <myapp_0.1>
+[2017/01/05T11:31:04.961+08:00] [I]       127.0.0.1     GET  200        645     82.768µs /apidoc/images/favicon-16x16.png |  <myapp_0.1>
+[2017/01/05T11:31:05.005+08:00] [I]       127.0.0.1     GET  200       1654    131.173µs /apidoc/images/favicon-32x32.png |  <myapp_0.1>
+[2017/01/05T11:31:12.58+08:00] [I]       127.0.0.1     GET  200       9257    612.617µs /apidoc/images/throbber.gif    |  <myapp_0.1>
+[2017/01/05T11:31:17.415+08:00] [I]       127.0.0.1     GET  200         51   4.092164ms /index/0?p=12&title=1          |  <myapp_0.1>
+[2017/01/05T11:31:28.24+08:00] [I]       127.0.0.1     GET  200         90     79.948µs /index/0?p=12&title=1          |  <myapp_0.1>
+[2017/01/05T11:31:28.429+08:00] [I]       127.0.0.1     GET  200         90     93.484µs /index/0?p=12&title=1          |  <myapp_0.1>
+[2017/01/05T11:31:28.672+08:00] [I]       127.0.0.1     GET  200         90     88.654µs /index/0?p=12&title=1          |  <myapp_0.1>
+[2017/01/05T11:31:28.868+08:00] [I]       127.0.0.1     GET  200         90         92µs /index/0?p=12&title=1          |  <myapp_0.1>
+[2017/01/05T11:31:29.057+08:00] [I]       127.0.0.1     GET  200         90     91.607µs /index/0?p=12&title=1          |  <myapp_0.1>
+[2017/01/05T11:31:29.245+08:00] [I]       127.0.0.1     GET  200         90     82.869µs /index/0?p=12&title=1          |  <myapp_0.1>
+[2017/01/05T11:31:29.418+08:00] [I]       127.0.0.1     GET  200         90      93.54µs /index/0?p=12&title=1          |  <myapp_0.1>
+[2017/01/05T11:31:29.608+08:00] [I]       127.0.0.1     GET  200         90     88.853µs /index/0?p=12&title=1          |  <myapp_0.1>
+[2017/01/05T11:32:08.183+08:00] APIdoc's URL path is '/apidoc/' [check direct ip for filter] <myapp_0.1>
+[2017/01/05T11:32:08.183+08:00] [SYS]     GET | /apidoc/*filepath              <myapp_0.1>
+[2017/01/05T11:32:08.183+08:00] [SYS]     GET | /apidoc_swagger.json           <myapp_0.1>
+[2017/01/05T11:32:08.183+08:00] [SYS]     GET | /index/:id                     <myapp_0.1>
+[2017/01/05T11:32:08.183+08:00] [SYS]     GET | /static/*filepath              <myapp_0.1>
+[2017/01/05T11:32:08.183+08:00] [SYS]     GET | /upload/*filepath              <myapp_0.1>
+[2017/01/05T11:32:08.183+08:00] [myapp_0.1] listen and serve HTTP/HTTP2 on 0.0.0.0:8080 <myapp_0.1>
+[2017/01/05T11:32:14.156+08:00] [I]       127.0.0.1     GET  200       2693    433.351µs /apidoc_swagger.json           |  <myapp_0.1>
+[2017/01/05T11:32:15.234+08:00] [I]       127.0.0.1     GET  304          0    393.037µs /apidoc/                       |  <myapp_0.1>
+[2017/01/05T11:32:15.422+08:00] [I]       127.0.0.1     GET  200       2693     86.921µs /apidoc_swagger.json           |  <myapp_0.1>
+[2017/01/05T11:32:15.569+08:00] [I]       127.0.0.1     GET  200        645     123.65µs /apidoc/images/favicon-16x16.png |  <myapp_0.1>
