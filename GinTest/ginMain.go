@@ -9,10 +9,10 @@ import (
 	"log"
 
 	"Project/GinTest/handlers"
+	//"github.com/constabulary/gb/testdata/src/c"
 )
 
 func main() {
-
 
 	//初始化命令行参数
 	//flag.Parse()
@@ -27,15 +27,11 @@ func main() {
 	//router.Use(middle001ware)
 
 	router.POST("/form_post", post1handler)
-	router.POST("/posthandle",PostHandler)
-	router.POST("/upload",uploadHandler)
-	router.GET("/get",handlers.GetHandler)
+	router.POST("/posthandle", PostHandler)
+	router.POST("/upload", uploadHandler)
+	router.GET("/get", handlers.GetHandler)
 	//router.POST("post",middle001ware)
 	router.Run(":8081")
-
-
-
-
 
 }
 
