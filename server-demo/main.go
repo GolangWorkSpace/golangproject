@@ -26,7 +26,6 @@ func main() {
 
 	SetLog()
 	defer log.Close()
-
 	//链接mgo
 	db.Connect()
 
