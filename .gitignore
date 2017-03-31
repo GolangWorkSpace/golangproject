@@ -24,3 +24,4 @@ _testmain.go
 *.prof
 .idea/
 Would skip repository log4go/
+projectFilesBackup/

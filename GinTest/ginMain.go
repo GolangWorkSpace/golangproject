@@ -8,7 +8,7 @@ import (
 	"io"
 	"log"
 
-	"Project/GinTest/handlers"
+	"project/GinTest/handlers"
 	//"github.com/constabulary/gb/testdata/src/c"
 )
 
