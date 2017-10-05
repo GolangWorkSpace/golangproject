@@ -3,7 +3,7 @@ package handlers
 import (
 	"gopkg.in/gin-gonic/gin.v1"
 	"net/http"
-	"Project/server-demo/models"
+	"project/server-demo/models"
 	"gopkg.in/mgo.v2"
 )
 

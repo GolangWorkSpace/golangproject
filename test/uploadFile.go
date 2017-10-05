@@ -4,13 +4,13 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"log"
+	//"log"
 	"mime/multipart"
 	"net/http"
 	"os"
 )
 
-// 获取大小的借口
+// 获取大小的接口
 type Sizer interface {
 	Size() int64
 }
@@ -47,7 +47,7 @@ func main() {
 	http.HandleFunc("/hello", HelloServer)
 	err := http.ListenAndServe(":12345", nil)
 	if err != nil {
-		log.("ListenAndServe: ", err)
+		//log.("ListenAndServe: ", err)
 	}
 }
 

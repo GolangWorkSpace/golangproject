@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"gopkg.in/gin-gonic/gin.v1"
-	"Project/server-demo/db"
+	"project/server-demo/db"
 )
 
 

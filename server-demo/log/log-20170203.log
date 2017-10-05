@@ -1,4 +1,0 @@
-2017-02-03 15:34:31 	 [ INFO] 	 <midware.go:13>  	 map[],localhost:8081/
-2017-02-03 15:34:53 	 [ INFO] 	 <midware.go:13>  	 map[],localhost:8081/get
-2017-02-03 15:35:00 	 [ INFO] 	 <midware.go:13>  	 map[abc:[1]],localhost:8081/get?abc=1
-2017-02-03 15:35:13 	 [ INFO] 	 <midware.go:13>  	 map[key:[1]],localhost:8081/get?key=1

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"gopkg.in/gin-gonic/gin.v1"
 	"net/http"
-	//log "github.com/brasbug/log4go"
+	log "github.com/brasbug/log4go"
 
 )
 
@@ -13,7 +13,7 @@ func GetHandler(c *gin.Context) {
 	if !exist {
 		value = "the key is not exist!"
 	}
-	//log.Info(value)
+	log.Info(value)
 	c.Data(http.StatusOK, "text/plain", []byte(fmt.Sprintf("get success! %s\n", value)))
 	return
 }

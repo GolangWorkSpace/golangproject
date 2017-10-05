@@ -3,10 +3,10 @@ package main
 import (
 	"gopkg.in/gin-gonic/gin.v1"
 	log "github.com/brasbug/log4go"
-	"Project/server-demo/handlers"
-	"Project/server-demo/ginpprof"
-	"Project/server-demo/db"
-	"Project/server-demo/midware"
+	"project/server-demo/handlers"
+	"project/server-demo/ginpprof"
+	"project/server-demo/db"
+	"project/server-demo/midware"
 )
 
 
