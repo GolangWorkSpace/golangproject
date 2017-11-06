@@ -1,8 +1,8 @@
 package main
 
 import (
-	//log "github.com/brasbug/log4go"
-	log "Project/log4go"
+	log "github.com/brasbug/log4go"
+	//log "Project/log4go"
 )
 
 
