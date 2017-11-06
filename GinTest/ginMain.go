@@ -1,15 +1,14 @@
 package main
 
 import (
-	"gopkg.in/gin-gonic/gin.v1"
 	"fmt"
-	"net/http"
-	"os"
 	"io"
 	"log"
-
+	"net/http"
+	"os"
 	"project/ginTest/handlers"
 	//"github.com/constabulary/gb/testdata/src/c"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -39,18 +38,14 @@ func Middleware(c *gin.Context) {
 	if c.Request.Form == nil {
 		c.Request.ParseMultipartForm(32 << 20)
 	}
-	fmt.Println("param=",c.Request.Form, "path=",c.Request.URL)
-
-
-
+	fmt.Println("param=", c.Request.Form, "path=", c.Request.URL)
 }
 
-
-func uploadHandler(c *gin.Context)  {
-	file, header , err := c.Request.FormFile("upload")
+func uploadHandler(c *gin.Context) {
+	file, header, err := c.Request.FormFile("upload")
 	filename := header.Filename
 	fmt.Println(header.Filename)
-	out, err := os.Create("./tmp/"+filename+".png")
+	out, err := os.Create("./tmp/" + filename + ".png")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -64,7 +59,7 @@ func uploadHandler(c *gin.Context)  {
 	//}})
 }
 
-func post1handler(c *gin.Context)  {
+func post1handler(c *gin.Context) {
 	message := c.PostForm("message")
 	nick := c.DefaultPostForm("nick", "anonymous")
 
@@ -74,7 +69,6 @@ func post1handler(c *gin.Context)  {
 		"nick":    nick,
 	})
 }
-
 
 func PostHandler(c *gin.Context) {
 	value := c.PostForm("name")
@@ -88,7 +82,6 @@ func PostHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, value)
 	return
 }
-
 
 //
 //
