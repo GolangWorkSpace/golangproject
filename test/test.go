@@ -30,3 +30,21 @@ func main() {
 		log.Fatal("ListenAndServer: ",err)
 	}
 }
+
+
+func httpPost() {
+	resp, err := http.Post("http://localhost:3001/",
+		"application/x-www-form-urlencoded",
+		strings.NewReader("name=cjb"))
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		// handle error
+	}
+
+	fmt.Println(string(body))
+}
