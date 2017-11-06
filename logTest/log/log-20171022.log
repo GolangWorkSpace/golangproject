@@ -1,0 +1,55 @@
+2017-10-22 22:51:03 	 [DEBUG] 	 <log4gotest.go:35>  	 log4go by skoo
+2017-10-22 22:51:03 	 [ INFO] 	 <log4gotest.go:36>  	 log4go by skoo
+2017-10-22 22:51:03 	 [ WARN] 	 <log4gotest.go:37>  	 log4go by skoo
+2017-10-22 22:51:03 	 [ERROR] 	 <log4gotest.go:38>  	 log4go by skoo
+2017-10-22 22:51:03 	 [FATAL] 	 <log4gotest.go:41>  	 log4go by skoo
+2017-10-22 22:51:15 	 [DEBUG] 	 <log4gotest.go:35>  	 log4go by skoo
+2017-10-22 22:51:15 	 [ INFO] 	 <log4gotest.go:36>  	 log4go by skoo
+2017-10-22 22:51:15 	 [ WARN] 	 <log4gotest.go:37>  	 log4go by skoo
+2017-10-22 22:51:15 	 [ERROR] 	 <log4gotest.go:38>  	 log4go by skoo
+2017-10-22 22:51:15 	 [FATAL] 	 <log4gotest.go:41>  	 log4go by skoo
+2017-10-22 22:51:15 	 [DEBUG] 	 <log4gotest.go:35>  	 log4go by skoo
+2017-10-22 22:51:15 	 [ INFO] 	 <log4gotest.go:36>  	 log4go by skoo
+2017-10-22 22:51:15 	 [ WARN] 	 <log4gotest.go:37>  	 log4go by skoo
+2017-10-22 22:51:15 	 [ERROR] 	 <log4gotest.go:38>  	 log4go by skoo
+2017-10-22 22:51:15 	 [FATAL] 	 <log4gotest.go:41>  	 log4go by skoo
+2017-10-22 22:51:16 	 [DEBUG] 	 <log4gotest.go:35>  	 log4go by skoo
+2017-10-22 22:51:16 	 [ INFO] 	 <log4gotest.go:36>  	 log4go by skoo
+2017-10-22 22:51:16 	 [ WARN] 	 <log4gotest.go:37>  	 log4go by skoo
+2017-10-22 22:51:16 	 [ERROR] 	 <log4gotest.go:38>  	 log4go by skoo
+2017-10-22 22:51:16 	 [FATAL] 	 <log4gotest.go:41>  	 log4go by skoo
+2017-10-22 22:51:16 	 [DEBUG] 	 <log4gotest.go:35>  	 log4go by skoo
+2017-10-22 22:51:16 	 [ INFO] 	 <log4gotest.go:36>  	 log4go by skoo
+2017-10-22 22:51:16 	 [ WARN] 	 <log4gotest.go:37>  	 log4go by skoo
+2017-10-22 22:51:16 	 [ERROR] 	 <log4gotest.go:38>  	 log4go by skoo
+2017-10-22 22:51:16 	 [FATAL] 	 <log4gotest.go:41>  	 log4go by skoo
+2017-10-22 22:51:17 	 [DEBUG] 	 <log4gotest.go:35>  	 log4go by skoo
+2017-10-22 22:51:17 	 [ INFO] 	 <log4gotest.go:36>  	 log4go by skoo
+2017-10-22 22:51:17 	 [ WARN] 	 <log4gotest.go:37>  	 log4go by skoo
+2017-10-22 22:51:17 	 [ERROR] 	 <log4gotest.go:38>  	 log4go by skoo
+2017-10-22 22:51:17 	 [FATAL] 	 <log4gotest.go:41>  	 log4go by skoo
+2017-10-22 22:51:17 	 [DEBUG] 	 <log4gotest.go:35>  	 log4go by skoo
+2017-10-22 22:51:17 	 [ INFO] 	 <log4gotest.go:36>  	 log4go by skoo
+2017-10-22 22:51:17 	 [ WARN] 	 <log4gotest.go:37>  	 log4go by skoo
+2017-10-22 22:51:17 	 [ERROR] 	 <log4gotest.go:38>  	 log4go by skoo
+2017-10-22 22:51:17 	 [FATAL] 	 <log4gotest.go:41>  	 log4go by skoo
+2017-10-22 22:51:18 	 [DEBUG] 	 <log4gotest.go:35>  	 log4go by skoo
+2017-10-22 22:51:18 	 [ INFO] 	 <log4gotest.go:36>  	 log4go by skoo
+2017-10-22 22:51:18 	 [ WARN] 	 <log4gotest.go:37>  	 log4go by skoo
+2017-10-22 22:51:18 	 [ERROR] 	 <log4gotest.go:38>  	 log4go by skoo
+2017-10-22 22:51:18 	 [FATAL] 	 <log4gotest.go:41>  	 log4go by skoo
+2017-10-22 22:51:18 	 [DEBUG] 	 <log4gotest.go:35>  	 log4go by skoo
+2017-10-22 22:51:18 	 [ INFO] 	 <log4gotest.go:36>  	 log4go by skoo
+2017-10-22 22:51:18 	 [ WARN] 	 <log4gotest.go:37>  	 log4go by skoo
+2017-10-22 22:51:18 	 [ERROR] 	 <log4gotest.go:38>  	 log4go by skoo
+2017-10-22 22:51:18 	 [FATAL] 	 <log4gotest.go:41>  	 log4go by skoo
+2017-10-22 22:51:19 	 [DEBUG] 	 <log4gotest.go:35>  	 log4go by skoo
+2017-10-22 22:51:19 	 [ INFO] 	 <log4gotest.go:36>  	 log4go by skoo
+2017-10-22 22:51:19 	 [ WARN] 	 <log4gotest.go:37>  	 log4go by skoo
+2017-10-22 22:51:19 	 [ERROR] 	 <log4gotest.go:38>  	 log4go by skoo
+2017-10-22 22:51:19 	 [FATAL] 	 <log4gotest.go:41>  	 log4go by skoo
+2017-10-22 22:51:20 	 [DEBUG] 	 <log4gotest.go:35>  	 log4go by skoo
+2017-10-22 22:51:20 	 [ INFO] 	 <log4gotest.go:36>  	 log4go by skoo
+2017-10-22 22:51:20 	 [ WARN] 	 <log4gotest.go:37>  	 log4go by skoo
+2017-10-22 22:51:20 	 [ERROR] 	 <log4gotest.go:38>  	 log4go by skoo
+2017-10-22 22:51:20 	 [FATAL] 	 <log4gotest.go:41>  	 log4go by skoo
