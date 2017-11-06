@@ -1,19 +1,16 @@
 package main
 
 import (
-	"gopkg.in/gin-gonic/gin.v1"
 	"fmt"
+	"gopkg.in/gin-gonic/gin.v1"
 	"net/http"
-
 )
-
 
 //// Binding from JSON
 //type Login struct {
 //	User     string `form:"user" json:"user" binding:"required"`
 //	Password string `form:"password" json:"password" binding:"required"`
 //}
-
 
 func main() {
 
@@ -23,31 +20,30 @@ func main() {
 
 	//router.SetHTMLTemplate(tpl)
 	router.LoadHTMLGlob("templates/*")
-	router.GET("/index",htmlIndex)
+	router.GET("/index", htmlIndex)
 	router.GET("/redirect", func(c *gin.Context) {
 		c.Redirect(http.StatusMovedPermanently, "http://www.google.com/")
 	})
-	router.POST("/api/login/",loginhandle)
-	router.POST("/api/loginform",loginForm)
+	router.POST("/api/login/", loginhandle)
+	router.POST("/api/loginform", loginForm)
 	router.Run(":8081")
 }
 
-func middleware(c *gin.Context)  {
+func middleware(c *gin.Context) {
 	//if c.Request.Form == nil {
 	//	c.Request.ParseMultipartForm(32 << 20)
 	//}
 	fmt.Println(c.Request.FormValue("name"))
 
-	fmt.Println("param:,",c.Request.Form, "URL: ",c.Request.URL,"Params:",c.Param)
+	fmt.Println("param:,", c.Request.Form, "URL: ", c.Request.URL, "Params:", c.Param)
 
 }
 
-func htmlIndex(c *gin.Context)  {
-	c.HTML(http.StatusOK,"temp.tmpl",gin.H{
+func htmlIndex(c *gin.Context) {
+	c.HTML(http.StatusOK, "temp.tmpl", gin.H{
 		"title": "Main website",
 	})
 }
-
 
 // Binding from JSON
 type Login struct {
@@ -55,8 +51,7 @@ type Login struct {
 	Password string `form:"password" json:"password" binding:"required"`
 }
 
-
-func loginhandle(c * gin.Context)  {
+func loginhandle(c *gin.Context) {
 
 	//value := c.Request.FormValue("user")
 	//fmt.Println(c.Request.FormValue("user"))
@@ -74,10 +69,9 @@ func loginhandle(c * gin.Context)  {
 		}
 	}
 
-
 }
 
-func loginForm(c *gin.Context)  {
+func loginForm(c *gin.Context) {
 	var form Login
 	// This will infer what binder to use depending on the content-type header.
 	if c.Bind(&form) == nil {
@@ -88,8 +82,6 @@ func loginForm(c *gin.Context)  {
 		}
 	}
 }
-
-
 
 //const tpl = `<!DOCTYPE html>
 //<html lang="en">
