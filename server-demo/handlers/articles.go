@@ -1,10 +1,10 @@
 package handlers
 
 import (
-	"gopkg.in/gin-gonic/gin.v1"
 	"net/http"
 	"project/server-demo/models"
 	"gopkg.in/mgo.v2"
+	"github.com/gin-gonic/gin"
 )
 
 // New article

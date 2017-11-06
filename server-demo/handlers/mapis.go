@@ -2,10 +2,10 @@ package handlers
 
 import (
 	"fmt"
-	"gopkg.in/gin-gonic/gin.v1"
 	"net/http"
 	log "github.com/brasbug/log4go"
 
+	"github.com/gin-gonic/gin"
 )
 
 func GetHandler(c *gin.Context) {
