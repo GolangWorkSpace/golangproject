@@ -5,8 +5,8 @@ package midware
 import (
 	"net/http"
 
-	"gopkg.in/gin-gonic/gin.v1"
 	"project/server-demo/db"
+	"github.com/gin-gonic/gin"
 )
 
 

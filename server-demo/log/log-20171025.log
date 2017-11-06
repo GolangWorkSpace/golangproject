@@ -1,0 +1,4 @@
+2017-10-25 23:14:00 	 [ INFO] 	 <midware.go:13>  	 map[key:[1]],localhost:8081/get?key=1
+2017-10-25 23:14:00 	 [ INFO] 	 <mapis.go:16>  	 1
+2017-10-25 23:14:08 	 [ INFO] 	 <midware.go:13>  	 map[key:[adasdfasdf]],localhost:8081/get?key=adasdfasdf
+2017-10-25 23:14:08 	 [ INFO] 	 <mapis.go:16>  	 adasdfasdf

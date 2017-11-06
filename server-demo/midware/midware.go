@@ -1,8 +1,8 @@
 package midware
 
 import (
-	"gopkg.in/gin-gonic/gin.v1"
 	log "github.com/brasbug/log4go"
+	"github.com/gin-gonic/gin"
 )
 
 

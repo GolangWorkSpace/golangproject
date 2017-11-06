@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gopkg.in/gin-gonic/gin.v1"
+	"github.com/gin-gonic/gin"
 	log "github.com/brasbug/log4go"
 	"project/server-demo/handlers"
 	"project/server-demo/ginpprof"
@@ -22,12 +22,15 @@ func SetLog() {
 	log.SetLayout("2006-01-02 15:04:05")
 }
 
+func init()  {
+	//链接mgo
+	db.Connect()
+}
+
 func main() {
 
 	SetLog()
 	defer log.Close()
-	//链接mgo
-	db.Connect()
 
 	gin.SetMode(gin.DebugMode)
 	router := gin.Default()

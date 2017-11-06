@@ -2,8 +2,8 @@ package midware
 
 import (
 	"regexp"
-	"gopkg.in/gin-gonic/gin.v1"
 	"github.com/sbecker/gin-api-demo/dao"
+	"github.com/gin-gonic/gin"
 )
 
 func Auth() gin.HandlerFunc {
