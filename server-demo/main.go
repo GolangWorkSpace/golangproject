@@ -35,7 +35,7 @@ func main() {
 	gin.SetMode(gin.DebugMode)
 	router := gin.Default()
 	router.Use(midware.Connect)
-	router.Use(midware.ErrorHandler)
+	router.Use(midware.Auth())
 	router.Use(midware.Middleware)
 	router.GET("/get", handlers.GetHandler)
 	router.POST("/articls",handlers.Create)
