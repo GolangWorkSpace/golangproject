@@ -1,0 +1,6 @@
+static/img/croped/*
+*.bak.*
+test.go
+templates/test.tmpl
+log.txt
+main
