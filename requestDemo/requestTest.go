@@ -10,6 +10,9 @@ import (
 	"time"
 	"encoding/hex"
 	"strconv"
+	"github.com/flywithbug/qcloudsms"
+
+
 )
 
 type UserInfoModel struct {
@@ -53,8 +56,34 @@ type telPara struct {
 
 func main()  {
 
-	postRequest()
+	TestSend()
 }
+
+func TestSend() {
+	conf := qcloudsms.NewClientConfig()
+	conf.AppID = "1400048815"
+	conf.AppKey = "023328a2ffd090219ead91e7262ac155"
+	client, err := qcloudsms.NewClient(conf)
+	if err != nil {
+		return
+	}
+	sms, err := qcloudsms.SMSService(client)
+	if err != nil {
+		return
+	}
+	ext := qcloudsms.SmsExt{}
+	ext.Type = 0
+	ext.NationCode = "86"
+
+	resp, err := sms.Send("17602198956", "您的验证码是:{3343s},请于{2}分钟内填写,如非本人操作,请忽略本短信。",ext)
+	if err != nil {
+		return
+	}
+	fmt.Println(resp)
+
+}
+
+
 
 func testGetR()  {
 	var user UserInfoModel
@@ -68,8 +97,9 @@ func testGetR()  {
 func postRequest()  {
 
 	hash := sha256.New()
-	mobile := "13761710430"
-	strRand := "7226249334"
+	mobile := "137617104" +
+		"30"
+	strRand := "722334"
 	strTime := time.Now().Unix()
 	fmt.Println(strTime)
 	sig :="appkey=023328a2ffd090219ead91e7262ac155"+"&random="+strRand+"&time="+ strconv.FormatInt(strTime,10)+"&mobile="+mobile
@@ -90,15 +120,14 @@ func postRequest()  {
 	sms := SMSTXModel{}
 	sms.SMStype = 0
 	sms.Time = time.Now().Unix()
-	sms.Messag = "发送短信验证码：1234"
+	sms.Messag = "欢迎注册案发现场App，请访问http://www.flywithme.top/ 了解更多"
 	sms.TelModel = tel
 	sms.Signature = mdstr
-
 	header := make(http.Header)
 
 	header.Set("Content-Type", "application/json")
 
-	resp ,_ := req.Post("https://yun.tim.qq.com/v5/tlssmssvr/sendsms?sdkappid=1400048815&random=7226249334", req.BodyJSON(&sms),header)                  // body => id=imroc&pwd=roc
+	resp ,_ := req.Post("https://yun.tim.qq.com/v5/tlssmssvr/sendsms?sdkappid=1400048815&random="+strRand, req.BodyJSON(&sms),header)                  // body => id=imroc&pwd=roc
 	fmt.Println(resp)
 }
 
