@@ -11,7 +11,7 @@ import (
 	"encoding/hex"
 	"strconv"
 	"github.com/flywithbug/qcloudsms"
-
+	"math/rand"
 
 )
 
@@ -32,22 +32,21 @@ type UserInfoModel struct {
 	State 		int 		`json:"state,omitempty" form:"state,omitempty"`
 }
 
-type SMSTXModel struct {
-	Uid  		int64 		`json:"uid,omitempty" form:"uid,omitempty"`
-	SMStype 	int 		`json:"type,omitempty" form:"type,omitempty"`     //0默认未设置 1男，2女
-	Messag		string 		`json:"msg,omitempty" form:"message,omitempty"`
-	Signature	string  	`json:"sig,omitempty" form:"signature,omitempty"`
-	Time		int64  		`json:"time,omitempty" form:"time,omitempty"`
-	Extend 		string 		`json:"extend,omitempty" form:"extend,omitempty"`
-	Ext		string		`json:"ext,omitempty" form:"extra,omitempty"`
-	Mobile		int 		`json:"mobile,omitempty" form:"mobile,omitempty"`
-	Ncode		int 		`json:"nationcode,omitempty" form:"ncode,omitempty"`
-	TelModel	telephoneModel	`json:"tel,omitempty" form:"tel,omitempty"`
+type SMSTXParamModel struct {
+	Uid  		int64 		`json:"uid,omitempty"`
+	Signature	string  	`json:"sig,omitempty"`
+	Time		int64  		`json:"time,omitempty"`
+	Extend 		string 		`json:"extend" `
+	Ext		string		`json:"ext,omitempty"`
+	TelModel	telephone	`json:"tel,omitempty"`
+	Tpl_id          int		`json:"tpl_id,omitempty"`
+	Sign		string		`json:"sign,omitempty"`
+	Params          [1]string	`json:"params,omitempty"`
 }
 
-type telephoneModel struct {
-	Code		int 			`json:"nationcode,omitempty" form:"ncode,omitempty"`
-	Mobile		int 			`json:"mobile,omitempty" form:"mobile,omitempty"`
+type telephone struct {
+	Code		string 			`json:"nationcode,omitempty"`
+	Mobile		string 			`json:"mobile,omitempty"`
 }
 
 type telPara struct {
@@ -75,7 +74,7 @@ func TestSend() {
 	ext.Type = 0
 	ext.NationCode = "86"
 
-	resp, err := sms.Send("17602198956", "您的验证码是:{3343s},请于{2}分钟内填写,如非本人操作,请忽略本短信。",ext)
+	resp, err := sms.Send("17602198956", "您的验证码是：1234 如非本人操作，请忽略本短信.(http://www.flywithme.top)",ext)
 	if err != nil {
 		return
 	}
@@ -99,7 +98,8 @@ func postRequest()  {
 	hash := sha256.New()
 	mobile := "137617104" +
 		"30"
-	strRand := "722334"
+	strRand := fmt.Sprintf("%06d", rand.Intn(999999))
+
 	strTime := time.Now().Unix()
 	fmt.Println(strTime)
 	sig :="appkey=023328a2ffd090219ead91e7262ac155"+"&random="+strRand+"&time="+ strconv.FormatInt(strTime,10)+"&mobile="+mobile
@@ -113,16 +113,18 @@ func postRequest()  {
 	mdstr := hex.EncodeToString(md)
 	fmt.Println(mdstr)
 
-	tel := telephoneModel{}
-	tel.Code = 86
-	tel.Mobile = 13761710430
-
-	sms := SMSTXModel{}
-	sms.SMStype = 0
+	tel := telephone{}
+	tel.Code = "86"
+	tel.Mobile = "17602198956"
+	sms := SMSTXParamModel{}
 	sms.Time = time.Now().Unix()
-	sms.Messag = "欢迎注册案发现场App，请访问http://www.flywithme.top/ 了解更多"
 	sms.TelModel = tel
 	sms.Signature = mdstr
+	sms.Extend = ""
+	//sms.Sign = "我在案发现场"
+	sms.Tpl_id = 56229
+	sms.Params[0] = "1234"
+	fmt.Println(sms.Params)
 	header := make(http.Header)
 
 	header.Set("Content-Type", "application/json")

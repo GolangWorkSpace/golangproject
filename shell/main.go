@@ -16,8 +16,6 @@ func main() {
 	}
 
 	fmt.Printf("Your name is %s", input)
-	// For Unix: test with delimiter "\n", for Windows: test with "\r\n"
-
-
-	}
+	 //For Unix: test with delimiter "\n", for Windows: test with "\r\n"
+	//}
 }
