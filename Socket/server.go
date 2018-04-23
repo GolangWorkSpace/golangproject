@@ -31,9 +31,8 @@ func handleConnection(conn net.Conn) {
 	tmpBuffer := make([]byte, 0)
 
 	//声明一个管道用于接收解包的数据
-	readerChannel := make(chan []byte, 16)
+	readerChannel := make(chan []byte, 1024)
 	go reader(readerChannel)
-
 	buffer := make([]byte, 1024)
 	for {
 		n, err := conn.Read(buffer)
@@ -50,7 +49,8 @@ func reader(readerChannel chan []byte) {
 	for {
 		select {
 		case data := <-readerChannel:
-			Log(string(data))
+			Log("receive:"+string(data))
+
 		}
 	}
 }
