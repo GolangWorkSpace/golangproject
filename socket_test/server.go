@@ -55,8 +55,8 @@ func handleConnection(conn net.Conn) {
 		fmt.Println("readLen: ", readLen, len(allbuf),"head:",string(allbuf[0:24]),"bufferLen:",len(buffer))
 		if len(allbuf) == length {
 			length = 0
+			headerlen = 0
 			allbuf = allbuf[:0]
-			buffer = make([]byte, 1024)
 		}
 	}
 }
