@@ -7,6 +7,7 @@ import (
 	"net"
 	"os"
 	"time"
+	"bufio"
 )
 
 func sender(conn net.Conn) {
@@ -34,8 +35,13 @@ func main() {
 
 	defer conn.Close()
 	fmt.Println("connect success")
-	go sender(conn)
+	//go sender(conn)
+	in := bufio.NewReader(os.Stdin)
+
 	for {
-		time.Sleep(1 * 1e9)
+		line, _, _ := in.ReadLine()
+
+		conn.Write(protocol.Packet(line))
+		//time.Sleep(1 * 1e9)
 	}
 }
