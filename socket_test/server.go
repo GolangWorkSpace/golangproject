@@ -1,145 +1,77 @@
 package main
 
 import (
-	"net"
 	"fmt"
-	"log"
+	"io"
+	"net"
+	"os"
+	"strconv"
+	"project/socket_test/protocol"
 )
 
-var client_num int = 0
+func main() {
+	netListen, err := net.Listen("tcp", ":5000")
+	CheckError(err)
 
-func StartServer1() {
-	l, err := net.Listen("tcp", ":1300")
-	if err != nil {
-		//errs.Error_exit(err)
-	}
-	defer l.Close()
+	defer netListen.Close()
 
 	for {
-		conn, err := l.Accept()
-		//conn.SetReadDeadline()
+		conn, err := netListen.Accept()
 		if err != nil {
-			//errs.Error_print(err)
 			continue
 		}
-		client_num++
-		fmt.Printf("A new Connection %d.\n", client_num)
-		go handlerConnection(conn)
+
+		go handleConnection(conn)
 	}
 }
 
-func handlerConnection(conn net.Conn) {
-	defer closeConnection(conn)
-
-	readChannel := make(chan []byte, 1024)
-	writeChannel := make(chan []byte, 1024)
-
-	go readConnection(conn, readChannel)
-	go writeConnection(conn, writeChannel)
 
 
-	for {
-		select {
-		case data := <- readChannel:
-			if string(data) == "bye" {
-				return
-			}
-			writeChannel <- append([]byte("Back:"), data...)
-		}
-	}
-
-}
-
-func writeConnection(conn net.Conn, channel chan []byte) {
-	for {
-		select {
-		case data := <- channel:
-			println("Write:", conn.RemoteAddr().String(), string(data))
-			_, err := conn.Write(data)
-			if err != nil {
-				//errs.Error_print(err)
-				return
-			}
-		}
-	}
-
-}
-func readConnection(conn net.Conn, channel chan []byte) {
-
-	buffer := make([]byte, 2048)
+func handleConnection(conn net.Conn) {
+	allbuf := make([]byte, 0)
+	buffer := make([]byte, 1024)
+	length := 0
+	headerlen := 0
+	type msg chan []byte
 
 	for {
-		n, err := conn.Read(buffer)
-		if err != nil {
-			//errs.Error_print(err)
-			channel <- []byte("bye")	//这里须要进一步改进！
+		readLen, err := conn.Read(buffer)
+		if err == io.EOF {
+			//conn 连接中断
+			fmt.Println("err",err)
 			break
 		}
-		println("Recei:", conn.RemoteAddr().String(), string(buffer[:n]))
-		channel <- buffer[:n]
+		if length == 0 && headerlen == 0 && len(allbuf) == 0{
+			headers ,err := protocol.UnPacketHeader(buffer)
+			if err == nil {
+				fmt.Println("a new in msg")
+				length,_ = strconv.Atoi(string(headers[2]))
+				headerlen =  len(headers[0])
+				allbuf = buffer[headerlen:]
+			}
+		}else {
+			allbuf = append(allbuf,buffer[:readLen]...)
+		}
+		fmt.Println("readLen: ", readLen, len(allbuf),"head:",string(allbuf[0:24]),"bufferLen:",len(buffer))
+		if len(allbuf) == length {
+			length = 0
+			allbuf = allbuf[:0]
+			buffer = make([]byte, 1024)
+		}
 	}
 }
 
-func closeConnection(conn net.Conn) {
 
-	conn.Close()
-	client_num--
-	fmt.Printf("Now, %d connections is alve.\n", client_num)
+
+func bufferReadEnd(buffer []byte)bool  {
+
+
+	return false
 }
 
-
-
-
-
-func StartTCPServer()(err error)  {
-	var (
-		bind     string
-		listener *net.TCPListener
-		addr     *net.TCPAddr
-	)
-	bind     =  "127.0.0.1:1300"
-	if addr, err = net.ResolveTCPAddr("tcp",bind) ;err !=nil{
-		log.Printf("net.ResolveTCPAddr(\"tcp4\", \"%s\") error(%v)", bind, err)
-		return
+func CheckError(err error) {
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+		os.Exit(1)
 	}
-	if listener,err = net.ListenTCP("tcp",addr); err != nil {
-		log.Printf("net.ListenTCP(\"tcp4\", \"%s\") error(%v)", bind, err)
-		return
-	}
-	return
-}
-
-func acceptTCP(lis *net.TCPListener)  {
-	var (
-		conn *net.TCPConn
-		err  error
-	)
-	for {
-		if conn, err = lis.AcceptTCP(); err != nil {
-			// if listener close then return
-			log.Printf("listener.Accept(\"%s\") error(%v)", lis.Addr().String(), err)
-			return
-		}
-		if err = conn.SetKeepAlive(false); err != nil {
-			log.Printf("conn.SetKeepAlive() error(%v)", err)
-			return
-		}
-		if err = conn.SetReadBuffer(1024); err != nil {
-			log.Printf("conn.SetReadBuffer() error(%v)", err)
-			return
-		}
-		if err = conn.SetWriteBuffer(1024); err != nil {
-			log.Printf("conn.SetWriteBuffer() error(%v)", err)
-			return
-		}
-
-		go handlerConnection(conn)
-	}
-
-}
-
-
-
-func main()  {
-	StartServer1()
 }

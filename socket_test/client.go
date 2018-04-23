@@ -1,66 +1,75 @@
+//客户端发送封包
 package main
 
 import (
-	"net"
 	"fmt"
+	"math/rand"
+	"net"
+	"os"
+	"strconv"
+	"strings"
+	"time"
+	"bufio"
+	"./protocol"
+
 )
 
-func StartClient1() {
-	tcpAddress, err := net.ResolveTCPAddr("tcp4", "127.0.0.1:1300")
+func main() {
+
+	server := "127.0.0.1:5000"
+	tcpAddr, err := net.ResolveTCPAddr("tcp4", server)
 	if err != nil {
-		//errs.Error_exit(err)
+		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+		os.Exit(1)
 	}
-	conn, err := net.DialTCP("tcp", nil, tcpAddress)
+
+	conn, err := net.DialTCP("tcp", nil, tcpAddr)
 	if err != nil {
-		//errs.Error_exit(err)
+		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
+		os.Exit(1)
 	}
 
-	writeChan := make(chan []byte, 1024)
-	readChan := make(chan []byte, 1024)
-
-	go writeConnection(conn, writeChan)
-	go readConnection(conn, readChan)
-
-	//go handleReadChannel(readChan)
-
-	for {
-		var s string
-		fmt.Scan(&s)
-		writeChan <- []byte(s)
-	}
-
-}
-
-func readConnection(conn *net.TCPConn, channel chan []byte) {
 	defer conn.Close()
+	in := bufio.NewReader(os.Stdin)
+	msg := RandString(2040)
+	words := protocol.Packet([]byte(msg))
+	fmt.Println(len(words), string(words))
+	conn.Write(words)
 
-	buffer := make([]byte, 2048)
-	for {
-		n, err := conn.Read(buffer)
-		if err != nil {
-			//errs.Error_print(err)
-			return
-		}
-		println("Received from:", conn.RemoteAddr(), string(buffer[:n]))
-		//channel <- buffer[:n]
+
+
+	for  {
+		line, _, _ := in.ReadLine()
+		fmt.Println(line)
+		send(conn,words)
 	}
+
+
+
 
 }
 
-func writeConnection(conn *net.TCPConn, channel chan []byte) {
-	defer conn.Close()
-	for {
-		select {
-		case data := <- channel:
-			_, err := conn.Write(data)
-			if err != nil {
-				//errs.Error_exit(err)
-			}
-			println("Write to:", conn.RemoteAddr(), string(data))
-		}
-	}
+func send(conn *net.TCPConn,line []byte)  {
+	conn.Write(line)
 }
 
-func main()  {
-	StartClient1()
+
+
+/**
+*生成随机字符
+**/
+func RandString(length int) string {
+	rand.Seed(time.Now().UnixNano())
+	rs := make([]string, length)
+	for start := 0; start < length; start++ {
+		t := rand.Intn(3)
+		if t == 0 {
+			rs = append(rs, strconv.Itoa(rand.Intn(10)))
+		} else if t == 1 {
+			rs = append(rs, string(rand.Intn(26)+65))
+		} else {
+			rs = append(rs, string(rand.Intn(26)+97))
+		}
+	}
+	return strings.Join(rs, "")
 }
