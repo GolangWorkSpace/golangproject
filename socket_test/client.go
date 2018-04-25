@@ -10,8 +10,9 @@ import (
 	"strings"
 	"time"
 	"bufio"
-	"./protocol"
+	"im_go/libs/proto"
 
+	"im_go/libs/bytes"
 )
 
 func main() {
@@ -32,17 +33,33 @@ func main() {
 	defer conn.Close()
 	in := bufio.NewReader(os.Stdin)
 	msg := RandString(2040)
-	words := protocol.Packet([]byte(msg))
-	fmt.Println(len(words), string(words))
-	conn.Write(words)
-
-
+	//words := protocol.Packet([]byte(msg))
+	//fmt.Println(len(words), string(words))
+	//conn.Write(words)
+	//fmt.Println(utils.Md5Buf(words))
+	p := proto.Proto{
+		Ver:1,
+		Operation:2,
+		SeqId:3,
+		Body:[]byte(msg),
+	}
+	var w  bytes.Writer
+	p.WriteTo(&w)
+	buf := w.Buffer()
+	fmt.Println("length",len(buf),string(buf))
+	buffer := make([]byte, 1024)
 
 	for  {
 		line, _, _ := in.ReadLine()
 		fmt.Println(line)
-		send(conn,words)
+		send(conn,buf)
+		n, _ := conn.Read(buffer)
+		fmt.Println(string(buffer[:n]))
+		buffer = buffer[:0]
+
 	}
+
+
 
 
 

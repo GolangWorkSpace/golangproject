@@ -5,36 +5,59 @@ import (
 	"io"
 	"net"
 	"os"
+	"./protocol"
 	"strconv"
-	"project/socket_test/protocol"
 )
 
 func main() {
-	netListen, err := net.Listen("tcp", ":5000")
-	CheckError(err)
+	//netListen, err := net.Listen("tcp", ":5000")
+	//CheckError(err)
+	//
+	//defer netListen.Close()
+	//
+	//for {
+	//	conn, err := netListen.Accept()
+	//	if err != nil {
+	//		continue
+	//	}
+	//
+	//	go handleConnection(conn)
+	//}
 
-	defer netListen.Close()
-
+	address := fmt.Sprintf("0.0.0.0:%d",5000)
+	tcpAddr,_ := net.ResolveTCPAddr("tcp",address)
+	listen ,err := net.ListenTCP("tcp",tcpAddr)
+	defer listen.Close()
+	if err != nil {
+		fmt.Println("初始化失败", err.Error())
+		return
+	}
 	for {
-		conn, err := netListen.Accept()
+		conn,err := listen.AcceptTCP()
 		if err != nil {
-			continue
+			return
 		}
-
 		go handleConnection(conn)
 	}
+
 }
 
 
 
 func handleConnection(conn net.Conn) {
-	allbuf := make([]byte, 0)
+	allbuf := make([]byte, 36)
 	buffer := make([]byte, 1024)
 	length := 0
 	headerlen := 0
 	type msg chan []byte
 
 	for {
+		//_,err := io.ReadFull(conn,allbuf)
+		//if err != nil {
+		//	fmt.Println("sock read error:", err)
+		//}
+		//fmt.Println(string(allbuf),"\n","length",len(allbuf),utils.Md5Buf(allbuf))
+
 		readLen, err := conn.Read(buffer)
 		if err == io.EOF {
 			//conn 连接中断
@@ -58,6 +81,8 @@ func handleConnection(conn net.Conn) {
 			headerlen = 0
 			allbuf = allbuf[:0]
 		}
+
+		conn.Write([]byte("received"))
 	}
 }
 

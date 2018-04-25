@@ -29,6 +29,13 @@ func main() {
 	if err != nil{
 		log.Fatal("ListenAndServer: ",err)
 	}
+
+
+	ip4 := taddr.IP.To4()
+
+
+
+
 }
 
 
